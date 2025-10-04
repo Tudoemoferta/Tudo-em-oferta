@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tudo em Oferta 123</title>
+<style>
+  :root{--accent:#ff6f61;--accent-dark:#cc4f45;--bg:#fff8f6;--card:#ffffff;}
+  body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:linear-gradient(180deg,#fffaf8 0%, #fff0ee 100%);color:#222;}
+  header{background:var(--accent);color:#fff;padding:28px 16px;text-align:center;box-shadow:0 4px 18px rgba(0,0,0,0.12);}
+  header h1{margin:0;font-size:1.6rem;}
+  header p{margin:6px 0 0;opacity:0.95;font-size:0.95rem;}
+  .wrap{max-width:980px;margin:22px auto;padding:0 16px;}
+  .grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:18px;}
+  .card{background:var(--card);border-radius:12px;padding:14px;box-shadow:0 6px 18px rgba(0,0,0,0.07);text-align:center;}
+  .btn{display:inline-block;background:var(--accent);color:#fff;padding:12px 16px;border-radius:10px;text-decoration:none;font-weight:700;box-shadow:0 6px 12px rgba(0,0,0,0.12);}
+  .btn.secondary{background:#ffffff;color:var(--accent);border:2px solid rgba(0,0,0,0.04);}
+  .nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:14px;}
+  footer{margin:32px 0 80px;text-align:center;color:#333;opacity:0.8;}
+  @media (max-width:420px){header h1{font-size:1.3rem;} .btn{padding:11px 12px;font-size:0.95rem;}}
+</style>
+</head>
+<body>
+<header>
+  <h1>🛍️ Tudo em Oferta 123</h1>
+  <p>Ofertas selecionadas + ebooks e guias — tudo num só lugar</p>
+</header>
+
+<main class="wrap">
+  <section class="card">
+    <h2 style="margin:0 0 6px;">Escolha uma categoria</h2>
+    <p style="margin:0 0 12px;color:#555;">Toque na categoria para ver a vitrine dedicada.</p>
+
+    <nav class="nav">
+      <a class="btn" href="roupas.html">👗 Roupas Femininas</a>
+      <a class="btn" href="beleza.html">💄 Beleza</a>
+      <a class="btn" href="eletronicos.html">📱 Eletrônicos</a>
+      <a class="btn" href="ebooks.html">📚 Ebooks</a>
+    </nav>
+  </section>
+
+  <section style="margin-top:20px;">
+    <div class="grid">
+      <div class="card">
+        <h3 style="margin:0 0 8px;">🔥 Ofertas do Dia</h3>
+        <p style="color:#555;margin:0 0 10px;">Atualizamos as melhores ofertas todos os dias.</p>
+        <a class="btn" href="#" onclick="alert('Abra a página de Ofertas no seu editor para definir o link.')" >Ver Ofertas</a>
+      </div>
+
+      <div class="card">
+        <h3 style="margin:0 0 8px;">📦 Entrega rápida</h3>
+        <p style="color:#555;margin:0 0 10px;">Produtos com envio rápido e seguro.</p>
+      </div>
+
+      <div class="card">
+        <h3 style="margin:0 0 8px;">💳 Pagamento seguro</h3>
+        <p style="color:#555;margin:0 0 10px;">Links de afiliado diretos para o checkout.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <small>© Tudo em Oferta 123 — personalize os links antes de publicar</small>
+</footer>
+</body>
+</html>
