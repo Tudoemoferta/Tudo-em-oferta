@@ -5,46 +5,736 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Águias Vitrine - Tudo em Oferta! As melhores ofertas em moda, beleza, eletrônicos, casa e ebooks. Descontos imperdíveis todos os dias!">
     <meta name="keywords" content="ofertas, promoções, moda feminina, beleza, eletrônicos, casa, ebooks, afiliados, descontos">
-    <meta name="author" content="Águias Vitrine">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://aguias-vitrine.github.io/">
-    <meta property="og:title" content="Águias Vitrine - Tudo em Oferta">
-    <meta property="og:description" content="As melhores ofertas em moda, beleza, eletrônicos e muito mais!">
-    <meta property="og:image" content="https://aguias-vitrine.github.io/assets/og-image.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://aguias-vitrine.github.io/">
-    <meta property="twitter:title" content="Águias Vitrine - Tudo em Oferta">
-    <meta property="twitter:description" content="As melhores ofertas em moda, beleza, eletrônicos e muito mais!">
-    <meta property="twitter:image" content="https://aguias-vitrine.github.io/assets/og-image.jpg">
-
     <title>Águias Vitrine - Tudo em Oferta | As Melhores Promoções</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/style.css">
-    
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID');
-    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .logo i {
+            font-size: 28px;
+            color: #ff6b6b;
+        }
+        
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-link {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .search-btn {
+            background: none;
+            border: none;
+            font-size: 18px;
+            color: #333;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .search-btn:hover {
+            background: #f8f9fa;
+            transform: scale(1.1);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(255, 107, 107, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(116, 185, 255, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, rgba(238, 90, 36, 0.2) 0%, transparent 50%);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .hero-title i {
+            color: #ff6b6b;
+            animation: pulse 2s infinite;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .stat {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ff6b6b;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .hero-actions {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(255, 107, 107, 0.4);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(45deg, #74b9ff, #0984e3);
+            color: white;
+            box-shadow: 0 4px 15px rgba(116, 185, 255, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(116, 185, 255, 0.4);
+        }
+        
+        .hero-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .floating-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            padding: 40px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            animation: float 3s ease-in-out infinite;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .floating-card i {
+            font-size: 4rem;
+            color: #ff6b6b;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .floating-card span {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            color: #333;
+        }
+        
+        .section-title i {
+            color: #ff6b6b;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Categories Section */
+        .categories {
+            background: white;
+            position: relative;
+        }
+        
+        .categories::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 0%, rgba(255, 107, 107, 0.05) 50%, transparent 100%);
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .category-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 107, 107, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        
+        .category-card:hover::before {
+            left: 100%;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            border-color: #ff6b6b;
+        }
+        
+        .category-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .category-card:hover .category-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .category-icon i {
+            font-size: 2.2rem;
+            color: white;
+        }
+        
+        .category-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #333;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .category-card p {
+            color: #666;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .category-count {
+            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+            color: #666;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Products Section */
+        .featured-products {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            position: relative;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            z-index: 2;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+        
+        .product-image {
+            height: 280px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #666;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+        
+        .product-info {
+            padding: 30px;
+        }
+        
+        .product-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .product-description {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        
+        .product-price {
+            margin-bottom: 20px;
+        }
+        
+        .current-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ff6b6b;
+            margin-right: 15px;
+        }
+        
+        .original-price {
+            font-size: 1.1rem;
+            color: #999;
+            text-decoration: line-through;
+        }
+        
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+        
+        .stars {
+            color: #ffc107;
+        }
+        
+        .rating-count {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .product-btn {
+            width: 100%;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 1rem;
+        }
+        
+        .product-btn:hover {
+            background: linear-gradient(45deg, #ee5a24, #ff6b6b);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+        }
+        
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);
+            color: white;
+            padding: 60px 0 30px;
+            position: relative;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(255, 107, 107, 0.1) 0%, transparent 50%);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .footer-logo i {
+            font-size: 2.5rem;
+            color: #ff6b6b;
+        }
+        
+        .footer-logo h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .footer-section h4 {
+            margin-bottom: 25px;
+            color: #ff6b6b;
+            font-size: 1.2rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-section ul li a:hover {
+            opacity: 1;
+            color: #ff6b6b;
+            transform: translateX(5px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .footer-bottom p {
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+        
+        /* Animations */
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .nav-list {
+                display: none;
+            }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+                justify-content: center;
+            }
+            
+            .hero-stats {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .categories-grid,
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -60,28 +750,12 @@
                         <li><a href="#home" class="nav-link active">Início</a></li>
                         <li><a href="#categorias" class="nav-link">Categorias</a></li>
                         <li><a href="#ofertas" class="nav-link">Ofertas</a></li>
-                        <li><a href="#ebooks" class="nav-link">Ebooks</a></li>
                         <li><a href="#contato" class="nav-link">Contato</a></li>
                     </ul>
                 </nav>
-                <div class="header-actions">
-                    <button class="search-btn" onclick="toggleSearch()">
-                        <i class="fas fa-search"></i>
-                    </button>
-                    <button class="menu-toggle" onclick="toggleMenu()">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-            </div>
-            
-            <!-- Search Bar -->
-            <div class="search-container" id="searchContainer">
-                <div class="search-box">
-                    <input type="text" id="searchInput" placeholder="Buscar produtos, ofertas..." onkeyup="searchProducts()">
-                    <button class="search-submit">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </div>
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
             </div>
         </div>
     </header>
@@ -117,9 +791,9 @@
                             <i class="fas fa-tags"></i>
                             Ver Ofertas
                         </a>
-                        <a href="#ebooks" class="btn btn-secondary">
-                            <i class="fas fa-download"></i>
-                            Ebooks Grátis
+                        <a href="#categorias" class="btn btn-secondary">
+                            <i class="fas fa-th-large"></i>
+                            Categorias
                         </a>
                     </div>
                 </div>
@@ -145,7 +819,7 @@
             </div>
             
             <div class="categories-grid">
-                <div class="category-card" data-category="moda">
+                <div class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-tshirt"></i>
                     </div>
@@ -154,7 +828,7 @@
                     <span class="category-count">120+ produtos</span>
                 </div>
                 
-                <div class="category-card" data-category="calcados">
+                <div class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-shoe-prints"></i>
                     </div>
@@ -163,7 +837,7 @@
                     <span class="category-count">80+ produtos</span>
                 </div>
                 
-                <div class="category-card" data-category="beleza">
+                <div class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-palette"></i>
                     </div>
@@ -172,7 +846,7 @@
                     <span class="category-count">95+ produtos</span>
                 </div>
                 
-                <div class="category-card" data-category="eletronicos">
+                <div class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
@@ -181,7 +855,7 @@
                     <span class="category-count">60+ produtos</span>
                 </div>
                 
-                <div class="category-card" data-category="casa">
+                <div class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-home"></i>
                     </div>
@@ -190,7 +864,7 @@
                     <span class="category-count">75+ produtos</span>
                 </div>
                 
-                <div class="category-card" data-category="ebooks">
+                <div class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-book"></i>
                     </div>
@@ -213,28 +887,11 @@
                 <p class="section-subtitle">Produtos selecionados com os melhores descontos</p>
             </div>
             
-            <!-- Filter Tabs -->
-            <div class="filter-tabs">
-                <button class="filter-tab active" data-filter="all">Todos</button>
-                <button class="filter-tab" data-filter="moda">Moda</button>
-                <button class="filter-tab" data-filter="calcados">Calçados</button>
-                <button class="filter-tab" data-filter="beleza">Beleza</button>
-                <button class="filter-tab" data-filter="eletronicos">Eletrônicos</button>
-                <button class="filter-tab" data-filter="casa">Casa</button>
-            </div>
-            
-            <!-- Products Grid -->
-            <div class="products-grid" id="productsGrid">
-                <!-- Moda Feminina -->
-                <div class="product-card" data-category="moda">
+            <div class="products-grid">
+                <div class="product-card">
                     <div class="product-badge">-60%</div>
                     <div class="product-image">
                         <img src="assets/images/conjunto-alfaiataria.jpg" alt="Conjunto Alfaiataria Elegante" loading="lazy">
-                        <div class="product-overlay">
-                            <button class="quick-view-btn">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                        </div>
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Conjunto Alfaiataria Elegante</h3>
@@ -253,22 +910,17 @@
                             </div>
                             <span class="rating-count">(127)</span>
                         </div>
-                        <a href="#" class="product-btn" onclick="trackClick('conjunto-alfaiataria', 'shopee')">
+                        <a href="https://shopee.com.br" class="product-btn" target="_blank">
                             <i class="fas fa-shopping-cart"></i>
                             Comprar na Shopee
                         </a>
                     </div>
                 </div>
                 
-                <div class="product-card" data-category="moda">
+                <div class="product-card">
                     <div class="product-badge">-45%</div>
                     <div class="product-image">
                         <img src="assets/images/blusa-cropped.jpg" alt="Blusa Cropped Moderna" loading="lazy">
-                        <div class="product-overlay">
-                            <button class="quick-view-btn">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                        </div>
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Blusa Cropped Moderna</h3>
@@ -287,23 +939,17 @@
                             </div>
                             <span class="rating-count">(89)</span>
                         </div>
-                        <a href="#" class="product-btn" onclick="trackClick('blusa-cropped', 'mercadolivre')">
+                        <a href="https://mercadolivre.com.br" class="product-btn" target="_blank">
                             <i class="fas fa-shopping-cart"></i>
                             Comprar no ML
                         </a>
                     </div>
                 </div>
                 
-                <!-- Calçados -->
-                <div class="product-card" data-category="calcados">
+                <div class="product-card">
                     <div class="product-badge">-55%</div>
                     <div class="product-image">
                         <img src="assets/images/sandalia-conforto.jpg" alt="Sandália Conforto Premium" loading="lazy">
-                        <div class="product-overlay">
-                            <button class="quick-view-btn">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                        </div>
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Sandália Conforto Premium</h3>
@@ -322,23 +968,17 @@
                             </div>
                             <span class="rating-count">(203)</span>
                         </div>
-                        <a href="#" class="product-btn" onclick="trackClick('sandalia-conforto', 'amazon')">
+                        <a href="https://amazon.com.br" class="product-btn" target="_blank">
                             <i class="fas fa-shopping-cart"></i>
                             Comprar na Amazon
                         </a>
                     </div>
                 </div>
                 
-                <!-- Beleza -->
-                <div class="product-card" data-category="beleza">
+                <div class="product-card">
                     <div class="product-badge">-70%</div>
                     <div class="product-image">
                         <img src="assets/images/kit-batom.jpg" alt="Kit Batom Matte 6 Cores" loading="lazy">
-                        <div class="product-overlay">
-                            <button class="quick-view-btn">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                        </div>
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Kit Batom Matte 6 Cores</h3>
@@ -357,23 +997,17 @@
                             </div>
                             <span class="rating-count">(156)</span>
                         </div>
-                        <a href="#" class="product-btn" onclick="trackClick('kit-batom', 'shopee')">
+                        <a href="https://shopee.com.br" class="product-btn" target="_blank">
                             <i class="fas fa-shopping-cart"></i>
                             Comprar na Shopee
                         </a>
                     </div>
                 </div>
                 
-                <!-- Eletrônicos -->
-                <div class="product-card" data-category="eletronicos">
+                <div class="product-card">
                     <div class="product-badge">-50%</div>
                     <div class="product-image">
                         <img src="assets/images/fone-bluetooth.jpg" alt="Fone Bluetooth Premium" loading="lazy">
-                        <div class="product-overlay">
-                            <button class="quick-view-btn">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                        </div>
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Fone Bluetooth Premium</h3>
@@ -392,23 +1026,17 @@
                             </div>
                             <span class="rating-count">(342)</span>
                         </div>
-                        <a href="#" class="product-btn" onclick="trackClick('fone-bluetooth', 'amazon')">
+                        <a href="https://amazon.com.br" class="product-btn" target="_blank">
                             <i class="fas fa-shopping-cart"></i>
                             Comprar na Amazon
                         </a>
                     </div>
                 </div>
                 
-                <!-- Casa -->
-                <div class="product-card" data-category="casa">
+                <div class="product-card">
                     <div class="product-badge">-40%</div>
                     <div class="product-image">
                         <img src="assets/images/organizador.jpg" alt="Organizador Multiuso" loading="lazy">
-                        <div class="product-overlay">
-                            <button class="quick-view-btn">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                        </div>
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Organizador Multiuso</h3>
@@ -427,119 +1055,12 @@
                             </div>
                             <span class="rating-count">(78)</span>
                         </div>
-                        <a href="#" class="product-btn" onclick="trackClick('organizador', 'mercadolivre')">
+                        <a href="https://mercadolivre.com.br" class="product-btn" target="_blank">
                             <i class="fas fa-shopping-cart"></i>
                             Comprar no ML
                         </a>
                     </div>
                 </div>
-            </div>
-            
-            <div class="load-more-container">
-                <button class="btn btn-outline" onclick="loadMoreProducts()">
-                    <i class="fas fa-plus"></i>
-                    Carregar Mais Produtos
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Ebooks Section -->
-    <section id="ebooks" class="ebooks">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">
-                    <i class="fas fa-book-open"></i>
-                    Ebooks & Guias Gratuitos
-                </h2>
-                <p class="section-subtitle">Conteúdo exclusivo para você baixar gratuitamente</p>
-            </div>
-            
-            <div class="ebooks-grid">
-                <div class="ebook-card">
-                    <div class="ebook-image">
-                        <img src="assets/images/ebook-moda.jpg" alt="Guia de Moda Feminina" loading="lazy">
-                        <div class="ebook-badge">GRÁTIS</div>
-                    </div>
-                    <div class="ebook-info">
-                        <h3>Guia Completo de Moda Feminina</h3>
-                        <p>Dicas essenciais para montar looks incríveis gastando pouco</p>
-                        <div class="ebook-meta">
-                            <span><i class="fas fa-file-pdf"></i> PDF</span>
-                            <span><i class="fas fa-download"></i> 1.2k downloads</span>
-                        </div>
-                        <a href="#" class="ebook-btn" onclick="downloadEbook('guia-moda-feminina')">
-                            <i class="fas fa-download"></i>
-                            Baixar Grátis
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="ebook-card">
-                    <div class="ebook-image">
-                        <img src="assets/images/ebook-beleza.jpg" alt="Manual de Beleza Natural" loading="lazy">
-                        <div class="ebook-badge">GRÁTIS</div>
-                    </div>
-                    <div class="ebook-info">
-                        <h3>Manual de Beleza Natural</h3>
-                        <p>Receitas caseiras e dicas para cuidar da pele e cabelo</p>
-                        <div class="ebook-meta">
-                            <span><i class="fas fa-file-pdf"></i> PDF</span>
-                            <span><i class="fas fa-download"></i> 890 downloads</span>
-                        </div>
-                        <a href="#" class="ebook-btn" onclick="downloadEbook('manual-beleza-natural')">
-                            <i class="fas fa-download"></i>
-                            Baixar Grátis
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="ebook-card">
-                    <div class="ebook-image">
-                        <img src="assets/images/ebook-organizacao.jpg" alt="Organização Doméstica" loading="lazy">
-                        <div class="ebook-badge">GRÁTIS</div>
-                    </div>
-                    <div class="ebook-info">
-                        <h3>Organização Doméstica Prática</h3>
-                        <p>Transforme sua casa em um ambiente organizado e funcional</p>
-                        <div class="ebook-meta">
-                            <span><i class="fas fa-file-pdf"></i> PDF</span>
-                            <span><i class="fas fa-download"></i> 756 downloads</span>
-                        </div>
-                        <a href="#" class="ebook-btn" onclick="downloadEbook('organizacao-domestica')">
-                            <i class="fas fa-download"></i>
-                            Baixar Grátis
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter Section -->
-    <section class="newsletter">
-        <div class="container">
-            <div class="newsletter-content">
-                <div class="newsletter-text">
-                    <h2>
-                        <i class="fas fa-envelope"></i>
-                        Receba as Melhores Ofertas
-                    </h2>
-                    <p>Cadastre-se e seja o primeiro a saber sobre promoções exclusivas e lançamentos!</p>
-                </div>
-                <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
-                    <div class="form-group">
-                        <input type="email" id="emailInput" placeholder="Seu melhor e-mail" required>
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-paper-plane"></i>
-                            Cadastrar
-                        </button>
-                    </div>
-                    <p class="form-disclaimer">
-                        <i class="fas fa-shield-alt"></i>
-                        Seus dados estão seguros conosco. Não enviamos spam.
-                    </p>
-                </form>
             </div>
         </div>
     </section>
@@ -555,10 +1076,10 @@
                     </div>
                     <p>Sua loja de ofertas online com os melhores produtos e preços do mercado.</p>
                     <div class="social-links">
-                        <a href="https://instagram.com/tudoemofertas123" target="_blank" rel="noopener">
+                        <a href="https://instagram.com/tudoemofertas123" target="_blank">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://wa.me/5511999999999" target="_blank" rel="noopener">
+                        <a href="https://wa.me/5511999999999" target="_blank">
                             <i class="fab fa-whatsapp"></i>
                         </a>
                         <a href="mailto:tudoemperta123@gmail.com">
@@ -575,17 +1096,6 @@
                         <li><a href="#categorias">Beleza</a></li>
                         <li><a href="#categorias">Eletrônicos</a></li>
                         <li><a href="#categorias">Casa & Decoração</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Informações</h4>
-                    <ul>
-                        <li><a href="#sobre">Sobre Nós</a></li>
-                        <li><a href="#como-funciona">Como Funciona</a></li>
-                        <li><a href="#politica">Política de Privacidade</a></li>
-                        <li><a href="#termos">Termos de Uso</a></li>
-                        <li><a href="#contato">Contato</a></li>
                     </ul>
                 </div>
                 
@@ -609,22 +1119,59 @@
             </div>
             
             <div class="footer-bottom">
-                <div class="footer-bottom-content">
-                    <p>&copy; 2024 Águias Vitrine - Tudo em Oferta. Todos os direitos reservados.</p>
-                    <p class="disclaimer">
-                        Este site contém links de afiliados. Podemos receber comissão por compras realizadas através destes links.
-                    </p>
-                </div>
+                <p>&copy; 2024 Águias Vitrine - Tudo em Oferta. Todos os direitos reservados.</p>
+                <p><small>Este site contém links de afiliados. Podemos receber comissão por compras realizadas através destes links.</small></p>
             </div>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
 
-    <!-- JavaScript -->
-    <script src="assets/script.js"></script>
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.category-card, .product-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
