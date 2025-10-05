@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Águias Vitrine - Tudo em Oferta! As melhores ofertas em moda, beleza, eletrônicos, casa e ebooks. Descontos imperdíveis todos os dias!">
+    <meta name="keywords" content="ofertas, promoções, moda feminina, beleza, eletrônicos, casa, ebooks, afiliados, descontos">
+    <title>Águias Vitrine - Tudo em Oferta | As Melhores Promoções</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .logo i {
+            font-size: 28px;
+            color: #ff6b6b;
+        }
+        
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-link {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .hero-title i {
+            color: #ff6b6b;
+            animation: pulse 2s infinite;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        /* Admin Panel */
+        .admin-panel {
+            background: white;
+            padding: 40px 0;
+            border-bottom: 3px solid #ff6b6b;
+        }
+        
+        .admin-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        .product-form {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #ff6b6b;
+            box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+        }
+        
+        .form-select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 14px;
+            background: white;
+            cursor: pointer;
+        }
+        
+        .btn-add {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+        
+        .btn-add:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.3);
+        }
+        
+        .btn-clear {
+            background: linear-gradient(45deg, #74b9ff, #0984e3);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            margin-left: 15px;
+        }
+        
+        .btn-clear:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(116, 185, 255, 0.3);
+        }
+        
+        /* Products Section */
+        .products-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .section-title i {
+            color: #ff6b6b;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            z-index: 2;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+        
+        .product-image {
+            height: 280px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+        
+        .product-image.loading {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        
+        .product-image.loading::after {
+            content: 'Carregando...';
+            color: #666;
+            font-size: 1rem;
+        }
+        
+        .product-info {
+            padding: 30px;
+        }
+        
+        .product-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .product-description {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        
+        .product-price {
+            margin-bottom: 20px;
+        }
+        
+        .current-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ff6b6b;
+            margin-right: 15px;
+        }
+        
+        .original-price {
+            font-size: 1.1rem;
+            color: #999;
+            text-decoration: line-through;
+        }
+        
+        .product-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .product-btn {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
+        }
+        
+        .product-btn:hover {
+            background: linear-gradient(45deg, #f7931e, #ff6b35);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.3);
+        }
+        
+        .btn-remove {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+        
+        .btn-remove:hover {
+            background: linear-gradient(45deg, #c0392b, #e74c3c);
+        }
+        
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);
+            color: white;
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo i {
+            font-size: 2rem;
+            color: #ff6b6b;
+        }
+        
+        .footer-logo h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        /* Animations */
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        @keyframes loading {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .nav-list {
+                display: none;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-group {
+                margin-bottom: 15px;
+            }
+            
+            .btn-clear {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#home" class="logo">
+                    <i class="fas fa-eagle"></i>
+                    <h1>Águias Vitrine</h1>
+                </a>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="#home" class="nav-link active">Início</a></li>
+                        <li><a href="#admin" class="nav-link">Gerenciar</a></li>
+                        <li><a href="#produtos" class="nav-link">Produtos</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">
+                    <i class="fas fa-fire"></i>
+                    Águias Vitrine - Tudo em Oferta!
+                </h2>
+                <p class="hero-subtitle">
+                    Sistema automático de produtos da Shopee - Adicione códigos e as imagens carregam automaticamente!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Panel -->
+    <section id="admin" class="admin-panel">
+        <div class="container">
+            <h2 class="admin-title">
+                <i class="fas fa-cog"></i>
+                Gerenciar Produtos da Shopee
+            </h2>
+            
+            <div class="product-form">
+                <div class="form-group">
+                    <label class="form-label">Código do Produto Shopee:</label>
+                    <input type="text" id="productCode" class="form-input" placeholder="Ex: 123456789.987654321">
+                    <small style="color: #666; font-size: 12px;">Cole o código que aparece no final da URL do produto (depois do último ponto)</small>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Nome do Produto:</label>
+                    <input type="text" id="productName" class="form-input" placeholder="Ex: Conjunto Alfaiataria Elegante">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Descrição:</label>
+                    <input type="text" id="productDescription" class="form-input" placeholder="Ex: Perfeito para ocasiões especiais">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Preço Atual (R$):</label>
+                    <input type="number" id="currentPrice" class="form-input" placeholder="89.90" step="0.01">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Preço Original (R$):</label>
+                    <input type="number" id="originalPrice" class="form-input" placeholder="224.90" step="0.01">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Link de Afiliado Shopee:</label>
+                    <input type="url" id="affiliateLink" class="form-input" placeholder="https://shope.ee/SEULINK">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Categoria:</label>
+                    <select id="productCategory" class="form-select">
+                        <option value="moda">Moda Feminina</option>
+                        <option value="calcados">Calçados</option>
+                        <option value="beleza">Beleza</option>
+                        <option value="eletronicos">Eletrônicos</option>
+                        <option value="casa">Casa & Decoração</option>
+                    </select>
+                </div>
+                
+                <button onclick="addProduct()" class="btn-add">
+                    <i class="fas fa-plus"></i>
+                    Adicionar Produto
+                </button>
+                
+                <button onclick="clearForm()" class="btn-clear">
+                    <i class="fas fa-eraser"></i>
+                    Limpar Formulário
+                </button>
+            </div>
+            
+            <div style="background: #e8f5e8; padding: 20px; border-radius: 10px; margin-top: 20px;">
+                <h4 style="color: #27ae60; margin-bottom: 10px;">
+                    <i class="fas fa-info-circle"></i>
+                    Como Funciona:
+                </h4>
+                <p style="color: #2c3e50; margin-bottom: 10px;">
+                    <strong>1.</strong> Copie o código do produto da URL da Shopee (números após o último ponto)
+                </p>
+                <p style="color: #2c3e50; margin-bottom: 10px;">
+                    <strong>2.</strong> Preencha as informações do produto
+                </p>
+                <p style="color: #2c3e50; margin-bottom: 10px;">
+                    <strong>3.</strong> A imagem será carregada automaticamente da Shopee
+                </p>
+                <p style="color: #2c3e50;">
+                    <strong>4.</strong> O produto aparecerá na vitrine abaixo
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="produtos" class="products-section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-store"></i>
+                Produtos em Destaque
+            </h2>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- Produtos serão adicionados aqui dinamicamente -->
+            </div>
+            
+            <div id="emptyState" style="text-align: center; padding: 60px 20px; color: #666;">
+                <i class="fas fa-box-open" style="font-size: 4rem; margin-bottom: 20px; opacity: 0.5;"></i>
+                <h3 style="margin-bottom: 10px;">Nenhum produto adicionado ainda</h3>
+                <p>Use o painel acima para adicionar produtos da Shopee</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">
+                <i class="fas fa-eagle"></i>
+                <h3>Águias Vitrine</h3>
+            </div>
+            <p>&copy; 2024 Águias Vitrine - Sistema Automático Shopee</p>
+            <p><small>Instagram: @tudoemofertas123 | Email: tudoemperta123@gmail.com</small></p>
+        </div>
+    </footer>
+
+    <script>
+        // Array para armazenar produtos
+        let products = [];
+
+        // Função para gerar URL da imagem da Shopee
+        function getShopeeImageUrl(productCode) {
+            // URL padrão da Shopee para imagens de produtos
+            return `https://cf.shopee.com.br/file/${productCode}`;
+        }
+
+        // Função para calcular desconto
+        function calculateDiscount(current, original) {
+            return Math.round(((original - current) / original) * 100);
+        }
+
+        // Função para adicionar produto
+        function addProduct() {
+            const code = document.getElementById('productCode').value.trim();
+            const name = document.getElementById('productName').value.trim();
+            const description = document.getElementById('productDescription').value.trim();
+            const currentPrice = parseFloat(document.getElementById('currentPrice').value);
+            const originalPrice = parseFloat(document.getElementById('originalPrice').value);
+            const affiliateLink = document.getElementById('affiliateLink').value.trim();
+            const category = document.getElementById('productCategory').value;
+
+            // Validações
+            if (!code || !name || !description || !currentPrice || !originalPrice || !affiliateLink) {
+                alert('Por favor, preencha todos os campos!');
+                return;
+            }
+
+            if (currentPrice >= originalPrice) {
+                alert('O preço atual deve ser menor que o preço original!');
+                return;
+            }
+
+            // Criar objeto do produto
+            const product = {
+                id: Date.now(),
+                code: code,
+                name: name,
+                description: description,
+                currentPrice: currentPrice,
+                originalPrice: originalPrice,
+                affiliateLink: affiliateLink,
+                category: category,
+                imageUrl: getShopeeImageUrl(code),
+                discount: calculateDiscount(currentPrice, originalPrice)
+            };
+
+            // Adicionar ao array
+            products.push(product);
+
+            // Atualizar display
+            renderProducts();
+
+            // Limpar formulário
+            clearForm();
+
+            // Scroll para produtos
+            document.getElementById('produtos').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Função para limpar formulário
+        function clearForm() {
+            document.getElementById('productCode').value = '';
+            document.getElementById('productName').value = '';
+            document.getElementById('productDescription').value = '';
+            document.getElementById('currentPrice').value = '';
+            document.getElementById('originalPrice').value = '';
+            document.getElementById('affiliateLink').value = '';
+            document.getElementById('productCategory').value = 'moda';
+        }
+
+        // Função para remover produto
+        function removeProduct(id) {
+            if (confirm('Tem certeza que deseja remover este produto?')) {
+                products = products.filter(product => product.id !== id);
+                renderProducts();
+            }
+        }
+
+        // Função para renderizar produtos
+        function renderProducts() {
+            const grid = document.getElementById('productsGrid');
+            const emptyState = document.getElementById('emptyState');
+
+            if (products.length === 0) {
+                grid.innerHTML = '';
+                emptyState.style.display = 'block';
+                return;
+            }
+
+            emptyState.style.display = 'none';
+
+            grid.innerHTML = products.map(product => `
+                <div class="product-card" data-category="${product.category}">
+                    <div class="product-badge">-${product.discount}%</div>
+                    <div class="product-image loading" id="image-${product.id}">
+                        <img src="${product.imageUrl}" 
+                             alt="${product.name}" 
+                             loading="lazy"
+                             onload="handleImageLoad(${product.id})"
+                             onerror="handleImageError(${product.id})">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">${product.name}</h3>
+                        <p class="product-description">${product.description}</p>
+                        <div class="product-price">
+                            <span class="current-price">R$ ${product.currentPrice.toFixed(2).replace('.', ',')}</span>
+                            <span class="original-price">R$ ${product.originalPrice.toFixed(2).replace('.', ',')}</span>
+                        </div>
+                        <div class="product-buttons">
+                            <a href="${product.affiliateLink}" class="product-btn" target="_blank">
+                                <i class="fab fa-shopify"></i>
+                                Comprar na Shopee
+                            </a>
+                            <button onclick="removeProduct(${product.id})" class="btn-remove">
+                                <i class="fas fa-trash"></i>
+                                Remover Produto
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Função para lidar com carregamento de imagem
+        function handleImageLoad(productId) {
+            const imageContainer = document.getElementById(`image-${productId}`);
+            if (imageContainer) {
+                imageContainer.classList.remove('loading');
+            }
+        }
+
+        // Função para lidar com erro de imagem
+        function handleImageError(productId) {
+            const imageContainer = document.getElementById(`image-${productId}`);
+            if (imageContainer) {
+                imageContainer.classList.remove('loading');
+                imageContainer.innerHTML = `
+                    <div style="text-align: center; color: #666; padding: 20px;">
+                        <i class="fas fa-image" style="font-size: 3rem; margin-bottom: 10px; opacity: 0.5;"></i>
+                        <p>Imagem não encontrada</p>
+                        <small>Verifique o código do produto</small>
+                    </div>
+                `;
+            }
+        }
+
+        // Navegação suave
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                // Add active class to clicked link
+                this.classList.add('active');
+                
+                // Smooth scroll to target
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Salvar produtos no localStorage
+        function saveProducts() {
+            localStorage.setItem('aguiasVitrineProducts', JSON.stringify(products));
+        }
+
+        // Carregar produtos do localStorage
+        function loadProducts() {
+            const saved = localStorage.getItem('aguiasVitrineProducts');
+            if (saved) {
+                products = JSON.parse(saved);
+                renderProducts();
+            }
+        }
+
+        // Atualizar saveProducts para ser chamada sempre que produtos mudarem
+        const originalAddProduct = addProduct;
+        addProduct = function() {
+            originalAddProduct();
+            saveProducts();
+        };
+
+        const originalRemoveProduct = removeProduct;
+        removeProduct = function(id) {
+            originalRemoveProduct(id);
+            saveProducts();
+        };
+
+        // Carregar produtos ao iniciar
+        window.addEventListener('load', loadProducts);
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
