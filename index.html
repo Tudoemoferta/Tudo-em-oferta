@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Águias Vitrine - Tudo em Oferta! As melhores ofertas em moda, beleza, eletrônicos, casa e ebooks. Descontos imperdíveis todos os dias!">
+    <meta name="keywords" content="ofertas, promoções, moda feminina, beleza, eletrônicos, casa, ebooks, afiliados, descontos">
+    <meta name="author" content="Águias Vitrine">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aguias-vitrine.github.io/">
+    <meta property="og:title" content="Águias Vitrine - Tudo em Oferta">
+    <meta property="og:description" content="As melhores ofertas em moda, beleza, eletrônicos e muito mais!">
+    <meta property="og:image" content="https://aguias-vitrine.github.io/assets/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://aguias-vitrine.github.io/">
+    <meta property="twitter:title" content="Águias Vitrine - Tudo em Oferta">
+    <meta property="twitter:description" content="As melhores ofertas em moda, beleza, eletrônicos e muito mais!">
+    <meta property="twitter:image" content="https://aguias-vitrine.github.io/assets/og-image.jpg">
+
+    <title>Águias Vitrine - Tudo em Oferta | As Melhores Promoções</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/style.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-eagle"></i>
+                    <h1>Águias Vitrine</h1>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="#home" class="nav-link active">Início</a></li>
+                        <li><a href="#categorias" class="nav-link">Categorias</a></li>
+                        <li><a href="#ofertas" class="nav-link">Ofertas</a></li>
+                        <li><a href="#ebooks" class="nav-link">Ebooks</a></li>
+                        <li><a href="#contato" class="nav-link">Contato</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <button class="search-btn" onclick="toggleSearch()">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="menu-toggle" onclick="toggleMenu()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Search Bar -->
+            <div class="search-container" id="searchContainer">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Buscar produtos, ofertas..." onkeyup="searchProducts()">
+                    <button class="search-submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2 class="hero-title">
+                        <i class="fas fa-fire"></i>
+                        Tudo em Oferta!
+                    </h2>
+                    <p class="hero-subtitle">
+                        As melhores promoções em moda, beleza, eletrônicos, casa e ebooks exclusivos em um só lugar!
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Produtos</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">70%</span>
+                            <span class="stat-label">Desconto</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">24h</span>
+                            <span class="stat-label">Ofertas</span>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="#ofertas" class="btn btn-primary">
+                            <i class="fas fa-tags"></i>
+                            Ver Ofertas
+                        </a>
+                        <a href="#ebooks" class="btn btn-secondary">
+                            <i class="fas fa-download"></i>
+                            Ebooks Grátis
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="floating-card">
+                        <i class="fas fa-percentage"></i>
+                        <span>Até 70% OFF</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categorias" class="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-th-large"></i>
+                    Categorias Principais
+                </h2>
+                <p class="section-subtitle">Explore nossas categorias e encontre as melhores ofertas</p>
+            </div>
+            
+            <div class="categories-grid">
+                <div class="category-card" data-category="moda">
+                    <div class="category-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3>Moda Feminina</h3>
+                    <p>Roupas, acessórios e muito mais</p>
+                    <span class="category-count">120+ produtos</span>
+                </div>
+                
+                <div class="category-card" data-category="calcados">
+                    <div class="category-icon">
+                        <i class="fas fa-shoe-prints"></i>
+                    </div>
+                    <h3>Calçados</h3>
+                    <p>Tênis, sandálias e sapatos</p>
+                    <span class="category-count">80+ produtos</span>
+                </div>
+                
+                <div class="category-card" data-category="beleza">
+                    <div class="category-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Beleza</h3>
+                    <p>Maquiagem e cuidados</p>
+                    <span class="category-count">95+ produtos</span>
+                </div>
+                
+                <div class="category-card" data-category="eletronicos">
+                    <div class="category-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Eletrônicos</h3>
+                    <p>Gadgets e acessórios tech</p>
+                    <span class="category-count">60+ produtos</span>
+                </div>
+                
+                <div class="category-card" data-category="casa">
+                    <div class="category-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Casa & Decoração</h3>
+                    <p>Organização e utilidades</p>
+                    <span class="category-count">75+ produtos</span>
+                </div>
+                
+                <div class="category-card" data-category="ebooks">
+                    <div class="category-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Ebooks & Cursos</h3>
+                    <p>Conteúdo digital exclusivo</p>
+                    <span class="category-count">50+ produtos</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section id="ofertas" class="featured-products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-star"></i>
+                    Ofertas em Destaque
+                </h2>
+                <p class="section-subtitle">Produtos selecionados com os melhores descontos</p>
+            </div>
+            
+            <!-- Filter Tabs -->
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all">Todos</button>
+                <button class="filter-tab" data-filter="moda">Moda</button>
+                <button class="filter-tab" data-filter="calcados">Calçados</button>
+                <button class="filter-tab" data-filter="beleza">Beleza</button>
+                <button class="filter-tab" data-filter="eletronicos">Eletrônicos</button>
+                <button class="filter-tab" data-filter="casa">Casa</button>
+            </div>
+            
+            <!-- Products Grid -->
+            <div class="products-grid" id="productsGrid">
+                <!-- Moda Feminina -->
+                <div class="product-card" data-category="moda">
+                    <div class="product-badge">-60%</div>
+                    <div class="product-image">
+                        <img src="assets/images/conjunto-alfaiataria.jpg" alt="Conjunto Alfaiataria Elegante" loading="lazy">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Conjunto Alfaiataria Elegante</h3>
+                        <p class="product-description">Perfeito para ocasiões especiais e trabalho</p>
+                        <div class="product-price">
+                            <span class="current-price">R$ 89,90</span>
+                            <span class="original-price">R$ 224,90</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(127)</span>
+                        </div>
+                        <a href="#" class="product-btn" onclick="trackClick('conjunto-alfaiataria', 'shopee')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Comprar na Shopee
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="moda">
+                    <div class="product-badge">-45%</div>
+                    <div class="product-image">
+                        <img src="assets/images/blusa-cropped.jpg" alt="Blusa Cropped Moderna" loading="lazy">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Blusa Cropped Moderna</h3>
+                        <p class="product-description">Versátil e moderna para qualquer ocasião</p>
+                        <div class="product-price">
+                            <span class="current-price">R$ 32,90</span>
+                            <span class="original-price">R$ 59,90</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-count">(89)</span>
+                        </div>
+                        <a href="#" class="product-btn" onclick="trackClick('blusa-cropped', 'mercadolivre')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Comprar no ML
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Calçados -->
+                <div class="product-card" data-category="calcados">
+                    <div class="product-badge">-55%</div>
+                    <div class="product-image">
+                        <img src="assets/images/sandalia-conforto.jpg" alt="Sandália Conforto Premium" loading="lazy">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Sandália Conforto Premium</h3>
+                        <p class="product-description">Perfeita para o dia a dia com muito estilo</p>
+                        <div class="product-price">
+                            <span class="current-price">R$ 67,90</span>
+                            <span class="original-price">R$ 149,90</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(203)</span>
+                        </div>
+                        <a href="#" class="product-btn" onclick="trackClick('sandalia-conforto', 'amazon')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Comprar na Amazon
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Beleza -->
+                <div class="product-card" data-category="beleza">
+                    <div class="product-badge">-70%</div>
+                    <div class="product-image">
+                        <img src="assets/images/kit-batom.jpg" alt="Kit Batom Matte 6 Cores" loading="lazy">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Kit Batom Matte 6 Cores</h3>
+                        <p class="product-description">Cores vibrantes e longa duração</p>
+                        <div class="product-price">
+                            <span class="current-price">R$ 29,90</span>
+                            <span class="original-price">R$ 99,90</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-count">(156)</span>
+                        </div>
+                        <a href="#" class="product-btn" onclick="trackClick('kit-batom', 'shopee')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Comprar na Shopee
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Eletrônicos -->
+                <div class="product-card" data-category="eletronicos">
+                    <div class="product-badge">-50%</div>
+                    <div class="product-image">
+                        <img src="assets/images/fone-bluetooth.jpg" alt="Fone Bluetooth Premium" loading="lazy">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Fone Bluetooth Premium</h3>
+                        <p class="product-description">Som potente e sem fios com super desconto</p>
+                        <div class="product-price">
+                            <span class="current-price">R$ 79,90</span>
+                            <span class="original-price">R$ 159,90</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(342)</span>
+                        </div>
+                        <a href="#" class="product-btn" onclick="trackClick('fone-bluetooth', 'amazon')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Comprar na Amazon
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Casa -->
+                <div class="product-card" data-category="casa">
+                    <div class="product-badge">-40%</div>
+                    <div class="product-image">
+                        <img src="assets/images/organizador.jpg" alt="Organizador Multiuso" loading="lazy">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Organizador Multiuso</h3>
+                        <p class="product-description">Facilite sua rotina e mantenha tudo em ordem</p>
+                        <div class="product-price">
+                            <span class="current-price">R$ 35,90</span>
+                            <span class="original-price">R$ 59,90</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-count">(78)</span>
+                        </div>
+                        <a href="#" class="product-btn" onclick="trackClick('organizador', 'mercadolivre')">
+                            <i class="fas fa-shopping-cart"></i>
+                            Comprar no ML
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="load-more-container">
+                <button class="btn btn-outline" onclick="loadMoreProducts()">
+                    <i class="fas fa-plus"></i>
+                    Carregar Mais Produtos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ebooks Section -->
+    <section id="ebooks" class="ebooks">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-book-open"></i>
+                    Ebooks & Guias Gratuitos
+                </h2>
+                <p class="section-subtitle">Conteúdo exclusivo para você baixar gratuitamente</p>
+            </div>
+            
+            <div class="ebooks-grid">
+                <div class="ebook-card">
+                    <div class="ebook-image">
+                        <img src="assets/images/ebook-moda.jpg" alt="Guia de Moda Feminina" loading="lazy">
+                        <div class="ebook-badge">GRÁTIS</div>
+                    </div>
+                    <div class="ebook-info">
+                        <h3>Guia Completo de Moda Feminina</h3>
+                        <p>Dicas essenciais para montar looks incríveis gastando pouco</p>
+                        <div class="ebook-meta">
+                            <span><i class="fas fa-file-pdf"></i> PDF</span>
+                            <span><i class="fas fa-download"></i> 1.2k downloads</span>
+                        </div>
+                        <a href="#" class="ebook-btn" onclick="downloadEbook('guia-moda-feminina')">
+                            <i class="fas fa-download"></i>
+                            Baixar Grátis
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="ebook-card">
+                    <div class="ebook-image">
+                        <img src="assets/images/ebook-beleza.jpg" alt="Manual de Beleza Natural" loading="lazy">
+                        <div class="ebook-badge">GRÁTIS</div>
+                    </div>
+                    <div class="ebook-info">
+                        <h3>Manual de Beleza Natural</h3>
+                        <p>Receitas caseiras e dicas para cuidar da pele e cabelo</p>
+                        <div class="ebook-meta">
+                            <span><i class="fas fa-file-pdf"></i> PDF</span>
+                            <span><i class="fas fa-download"></i> 890 downloads</span>
+                        </div>
+                        <a href="#" class="ebook-btn" onclick="downloadEbook('manual-beleza-natural')">
+                            <i class="fas fa-download"></i>
+                            Baixar Grátis
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="ebook-card">
+                    <div class="ebook-image">
+                        <img src="assets/images/ebook-organizacao.jpg" alt="Organização Doméstica" loading="lazy">
+                        <div class="ebook-badge">GRÁTIS</div>
+                    </div>
+                    <div class="ebook-info">
+                        <h3>Organização Doméstica Prática</h3>
+                        <p>Transforme sua casa em um ambiente organizado e funcional</p>
+                        <div class="ebook-meta">
+                            <span><i class="fas fa-file-pdf"></i> PDF</span>
+                            <span><i class="fas fa-download"></i> 756 downloads</span>
+                        </div>
+                        <a href="#" class="ebook-btn" onclick="downloadEbook('organizacao-domestica')">
+                            <i class="fas fa-download"></i>
+                            Baixar Grátis
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h2>
+                        <i class="fas fa-envelope"></i>
+                        Receba as Melhores Ofertas
+                    </h2>
+                    <p>Cadastre-se e seja o primeiro a saber sobre promoções exclusivas e lançamentos!</p>
+                </div>
+                <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                    <div class="form-group">
+                        <input type="email" id="emailInput" placeholder="Seu melhor e-mail" required>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Cadastrar
+                        </button>
+                    </div>
+                    <p class="form-disclaimer">
+                        <i class="fas fa-shield-alt"></i>
+                        Seus dados estão seguros conosco. Não enviamos spam.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contato" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-eagle"></i>
+                        <h3>Águias Vitrine</h3>
+                    </div>
+                    <p>Sua loja de ofertas online com os melhores produtos e preços do mercado.</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/tudoemofertas123" target="_blank" rel="noopener">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/5511999999999" target="_blank" rel="noopener">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:tudoemperta123@gmail.com">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Categorias</h4>
+                    <ul>
+                        <li><a href="#categorias">Moda Feminina</a></li>
+                        <li><a href="#categorias">Calçados</a></li>
+                        <li><a href="#categorias">Beleza</a></li>
+                        <li><a href="#categorias">Eletrônicos</a></li>
+                        <li><a href="#categorias">Casa & Decoração</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Informações</h4>
+                    <ul>
+                        <li><a href="#sobre">Sobre Nós</a></li>
+                        <li><a href="#como-funciona">Como Funciona</a></li>
+                        <li><a href="#politica">Política de Privacidade</a></li>
+                        <li><a href="#termos">Termos de Uso</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <div class="contact-info">
+                        <p>
+                            <i class="fas fa-envelope"></i>
+                            tudoemperta123@gmail.com
+                        </p>
+                        <p>
+                            <i class="fab fa-instagram"></i>
+                            @tudoemofertas123
+                        </p>
+                        <p>
+                            <i class="fas fa-clock"></i>
+                            Atendimento: 24h online
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Águias Vitrine - Tudo em Oferta. Todos os direitos reservados.</p>
+                    <p class="disclaimer">
+                        Este site contém links de afiliados. Podemos receber comissão por compras realizadas através destes links.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="assets/script.js"></script>
+</body>
+</html>

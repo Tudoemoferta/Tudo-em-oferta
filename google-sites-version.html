@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Águias Vitrine - Tudo em Oferta</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ff6b6b;
+            margin-bottom: 10px;
+        }
+        
+        .hero {
+            padding: 60px 0;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            margin: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .categories {
+            background: white;
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #333;
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .category-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .category-icon {
+            font-size: 3rem;
+            color: #ff6b6b;
+            margin-bottom: 20px;
+        }
+        
+        .products {
+            background: #f8f9fa;
+            padding: 60px 0;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-image {
+            height: 200px;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #666;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .product-price {
+            font-size: 1.5rem;
+            color: #ff6b6b;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .product-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+        }
+        
+        .footer {
+            background: #2d3436;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .categories-grid,
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">🦅 Águias Vitrine</div>
+            <p>Tudo em Oferta - As Melhores Promoções</p>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>🔥 Tudo em Oferta!</h1>
+            <p>As melhores promoções em moda, beleza, eletrônicos, casa e ebooks exclusivos!</p>
+            <a href="#produtos" class="btn">🏷️ Ver Ofertas</a>
+            <a href="#ebooks" class="btn">📚 Ebooks Grátis</a>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">📂 Categorias Principais</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">👗</div>
+                    <h3>Moda Feminina</h3>
+                    <p>Roupas, acessórios e muito mais</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">👠</div>
+                    <h3>Calçados</h3>
+                    <p>Tênis, sandálias e sapatos</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">💄</div>
+                    <h3>Beleza</h3>
+                    <p>Maquiagem e cuidados</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">📱</div>
+                    <h3>Eletrônicos</h3>
+                    <p>Gadgets e acessórios tech</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🏠</div>
+                    <h3>Casa & Decoração</h3>
+                    <p>Organização e utilidades</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">📚</div>
+                    <h3>Ebooks & Cursos</h3>
+                    <p>Conteúdo digital exclusivo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section id="produtos" class="products">
+        <div class="container">
+            <h2 class="section-title">⭐ Ofertas em Destaque</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">Conjunto Alfaiataria</div>
+                    <div class="product-info">
+                        <h3 class="product-title">Conjunto Alfaiataria Elegante</h3>
+                        <div class="product-price">R$ 89,90 <small style="text-decoration: line-through; color: #999;">R$ 224,90</small></div>
+                        <a href="https://shopee.com.br" class="product-btn">🛒 Comprar na Shopee</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">Blusa Cropped</div>
+                    <div class="product-info">
+                        <h3 class="product-title">Blusa Cropped Moderna</h3>
+                        <div class="product-price">R$ 32,90 <small style="text-decoration: line-through; color: #999;">R$ 59,90</small></div>
+                        <a href="https://mercadolivre.com.br" class="product-btn">🛒 Comprar no ML</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">Sandália Conforto</div>
+                    <div class="product-info">
+                        <h3 class="product-title">Sandália Conforto Premium</h3>
+                        <div class="product-price">R$ 67,90 <small style="text-decoration: line-through; color: #999;">R$ 149,90</small></div>
+                        <a href="https://amazon.com.br" class="product-btn">🛒 Comprar na Amazon</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">Kit Batom</div>
+                    <div class="product-info">
+                        <h3 class="product-title">Kit Batom Matte 6 Cores</h3>
+                        <div class="product-price">R$ 29,90 <small style="text-decoration: line-through; color: #999;">R$ 99,90</small></div>
+                        <a href="https://shopee.com.br" class="product-btn">🛒 Comprar na Shopee</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">Fone Bluetooth</div>
+                    <div class="product-info">
+                        <h3 class="product-title">Fone Bluetooth Premium</h3>
+                        <div class="product-price">R$ 79,90 <small style="text-decoration: line-through; color: #999;">R$ 159,90</small></div>
+                        <a href="https://amazon.com.br" class="product-btn">🛒 Comprar na Amazon</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">Organizador</div>
+                    <div class="product-info">
+                        <h3 class="product-title">Organizador Multiuso</h3>
+                        <div class="product-price">R$ 35,90 <small style="text-decoration: line-through; color: #999;">R$ 59,90</small></div>
+                        <a href="https://mercadolivre.com.br" class="product-btn">🛒 Comprar no ML</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ebooks -->
+    <section id="ebooks" class="categories">
+        <div class="container">
+            <h2 class="section-title">📖 Ebooks Gratuitos</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">👗</div>
+                    <h3>Guia de Moda Feminina</h3>
+                    <p>Dicas para montar looks incríveis</p>
+                    <a href="#" class="btn">📥 Baixar Grátis</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">💄</div>
+                    <h3>Manual de Beleza Natural</h3>
+                    <p>Receitas caseiras para cuidados</p>
+                    <a href="#" class="btn">📥 Baixar Grátis</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🏠</div>
+                    <h3>Organização Doméstica</h3>
+                    <p>Transforme sua casa em um lar organizado</p>
+                    <a href="#" class="btn">📥 Baixar Grátis</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="logo">🦅 Águias Vitrine</div>
+            <p>Sua loja de ofertas online com os melhores produtos e preços!</p>
+            <div class="social-links">
+                <a href="https://instagram.com/tudoemofertas123">📱 Instagram</a>
+                <a href="mailto:tudoemperta123@gmail.com">📧 E-mail</a>
+                <a href="https://wa.me/5511999999999">💬 WhatsApp</a>
+            </div>
+            <p>&copy; 2024 Águias Vitrine - Todos os direitos reservados.</p>
+            <p><small>Este site contém links de afiliados.</small></p>
+        </div>
+    </footer>
+</body>
+</html>
