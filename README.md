@@ -4,7 +4,7 @@
 
 ## 📋 Sobre o Projeto
 
-O **Águias Vitrine** é uma plataforma de afiliados moderna e responsiva que oferece as melhores promoções em diversas categorias:
+O **Águias Vitrine** é uma plataforma moderna e responsiva que oferece as melhores promoções em diversas categorias:
 
 - 👗 **Moda Feminina** - Roupas, acessórios e muito mais
 - 👠 **Calçados** - Tênis, sandálias e sapatos
