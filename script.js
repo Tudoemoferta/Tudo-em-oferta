@@ -219,7 +219,130 @@ function trackClick(productName, platform) {
             'amazon': 'https://amazon.com.br/affiliate-link-organizador'
         }
 const productPlatforms = affiliateLinks[productName];
+// Chave onde os dados serão armazenados no LocalStorage
+const LOCAL_STORAGE_KEY = 'affiliateProducts';
 
+/**
+ * Carrega os produtos do LocalStorage.
+ * @returns {Array} Lista de produtos.
+ */
+function loadProducts() {
+    const productsJSON = localStorage.getItem(LOCAL_STORAGE_KEY);
+    return productsJSON ? JSON.parse(productsJSON) : [];
+}
+
+/**
+ * Renderiza (cria o HTML) de todos os produtos na tela.
+ * @param {Array} products Lista de produtos a serem exibidos.
+ */
+function renderProducts(products) {
+    const container = document.getElementById('productsGrid');
+
+    // Se o container não existir, não podemos renderizar.
+    if (!container) {
+        console.error("Elemento com ID 'productsGrid' não encontrado no HTML.");
+        return;
+    }
+
+    // Limpa o conteúdo anterior
+    container.innerHTML = '';
+
+    if (products.length === 0) {
+        // Exibe mensagem se não houver produtos
+        container.innerHTML = '<p id="noProducts">Nenhum produto publicado ainda. Use o formulário acima para adicionar um item!</p>';
+        return;
+    }
+
+    // Cria e insere o cartão de cada produto
+    products.forEach(produto => {
+        const card = document.createElement('div');
+        card.classList.add('product-card'); // Adicione sua classe de CSS aqui
+
+        // Estrutura do cartão do produto:
+        card.innerHTML = `
+            <h3 class="product-name">${produto.nome}</h3>
+            <p class="product-description">${produto.descricao}</p>
+            <p class="product-platform">Plataforma: ${produto.plataforma.toUpperCase()}</p>
+            
+            <a href="${produto.linkAfiliado}" target="_blank" class="btn-affiliate-link">
+                Comprar Agora
+            </a>
+
+            <button onclick="deleteProduct('${produto.id}')" class="btn-delete">Excluir</button>
+        `;
+        
+        container.appendChild(card);
+    });
+}
+
+
+/**
+ * Adiciona um novo produto e salva no LocalStorage.
+ * @param {Event} event O evento de submissão do formulário.
+ */
+function saveProduct(event) {
+    event.preventDefault();
+
+    const form = event.target;
+    // Pega os valores dos campos do formulário
+    const newProduct = {
+        id: 'prod-' + Date.now(), // ID único baseado no tempo
+        nome: form.elements.productName.value || 'Produto Sem Nome',
+        descricao: form.elements.productDescription.value || 'Sem descrição.',
+        plataforma: form.elements.productPlatform.value || 'N/A',
+        linkAfiliado: form.elements.productAffiliateLink.value,
+    };
+
+    if (!newProduct.linkAfiliado) {
+        alert('Por favor, insira o link de afiliado.');
+        return;
+    }
+
+    // Salva
+    let products = loadProducts();
+    products.push(newProduct);
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(products));
+
+    // Renderiza a lista atualizada
+    renderProducts(products); 
+
+    // Limpa e dá feedback
+    form.reset();
+    alert('Produto publicado! (Salvo apenas no seu navegador)');
+}
+
+/**
+ * Exclui um produto pelo ID e atualiza a visualização.
+ * @param {string} productId O ID único do produto a ser excluído.
+ */
+function deleteProduct(productId) {
+    if (confirm("Tem certeza que deseja excluir este produto?")) {
+        let products = loadProducts();
+        // Filtra para manter todos, exceto o que tem o ID a ser excluído
+        const updatedProducts = products.filter(p => p.id !== productId);
+        
+        // Salva a lista atualizada
+        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updatedProducts));
+        
+        // Renderiza a lista atualizada
+        renderProducts(updatedProducts);
+    }
+}
+
+// --- CONFIGURAÇÃO INICIAL (Chama as funções quando o HTML carregar) ---
+
+// 1. Associa a função 'saveProduct' ao formulário de adição
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('addProductForm');
+    if (form) {
+        form.addEventListener('submit', saveProduct);
+    } else {
+        console.warn("Formulário com ID 'addProductForm' não encontrado. Não será possível salvar novos produtos.");
+    }
+    
+    // 2. Carrega e exibe os produtos existentes ao abrir a página
+    renderProducts(loadProducts());
+});
     if (productPlatforms && productPlatforms[platform]) {
         const affiliateLink = productPlatforms[platform];
         // Redireciona o usuário para o link de afiliado em uma nova aba
