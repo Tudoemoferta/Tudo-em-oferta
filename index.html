@@ -1036,8 +1036,15 @@
                     <label class="form-label">Categoria:</label>
                     <select id="editProductCategory" class="form-input">
                         <option value="moda">Moda Feminina</option>
+                        <option value="moda">Moda Masculina</option>
+                        <option value="moda">Moda Infantil</option>
+                        <option value="moda">Moda Hospitalar</option>
+                        <option value="moda">Moda Praia</option>
+                        <option value="moda">Moda Fitness</option>
+                        <option value="treino">Suplemento</option>
                         <option value="calcados">Calçados</option>
                         <option value="beleza">Beleza</option>
+                        <option value="celular">Celular</option>
                         <option value= "informatica">Informatica</option>
                         <option value="eletronicos">Eletrônicos</option>
                         <option value="casa">Casa & Decoração</option>
@@ -1133,7 +1140,7 @@
                                 <option value="mercadolivre">Mercado Livre</option>
                                 <option value="eduzz">Eduzz</option>
                                 <option value="hotmart">Hotmart</option>
-                                <option value="kwai">Kwai</option>
+                                <option value="kiwify">Kiwify</option>
                                 <option value="aliexpress">AliExpress</option>
                                 <option value="outros">Outros</option>
                             </select>
@@ -1147,8 +1154,16 @@
                             <label class="form-label">Categoria:</label>
                             <select id="manualCategory" class="form-input">
                                 <option value="moda">Moda Feminina</option>
+                                <option value="moda">Moda Masculina</option>
+                                <option value="moda">Moda Infantil</option>
+                                <option value="moda">Moda Hospitalar</option>
+                                <option value="moda">Moda Praia</option>
+                                <option value="moda">Moda Fitnnes</option>
+                                <option value="treino">Suplemento</option>
                                 <option value="calcados">Calçados</option>
                                 <option value="beleza">Beleza</option>
+                                <option value="celular">Celular</option>
+                                <option value="informatica">Informática</option>
                                 <option value="eletronicos">Eletrônicos</option>
                                 <option value="casa">Casa & Decoração</option>
                                 <option value="ebooks">Ebooks & Cursos</option>
@@ -1276,7 +1291,7 @@
                 </div>
                 <div class="category-card" onclick="filterProdutcts('treino')">
                     <div class="category-icon">🆙</div>
-                    <div class="category-name">Suplementos</div>                   
+                    <div class="category-name">Suplemento</div>                   
                 </div>
                 <div class="category-card" onclick="filterProducts('calcados')">
                     <div class="category-icon">👠</div>
@@ -1318,9 +1333,9 @@
             <div class="filters">
                 <button class="filter-btn active" onclick="filterProducts('all')">Todos</button>
                 <button class="filter-btn" onclick="filterProducts('moda')">Moda</button>
+                <button class="filter-btn" onclick="filterProducts('treino')">Suplemento</button>
                 <button class="filter-btn" onclick="filterProducts('calcados')">Calçados</button>
-                <button class="filter-btn" onclick="filterProducts('beleza')">Beleza</button>
-                <button class="filter-btn" onclick="filterProducts('treino')">Suplementos</button>
+                <button class="filter-btn" onclick="filterProducts('beleza')">Beleza</button>              
                 <button class="filter-btn" onclick="filterProducts('celular')">Celular</button>
                 <button class="filter-btn" onclick="filterProducts('informatica')">Informática</button>
                 <button class="filter-btn" onclick="filterProducts('eletronicos')">Eletrônicos</button>
@@ -1381,15 +1396,18 @@
                     <a href="#" onclick="filterProducts('moda')">Moda Feminina</a><br>
                     <a href="#" onclick="filterProducts('moda')">Moda Masculina</a><br>
                     <a href="#" onclick="filterProducts('moda')">Moda Infantil</a><br>
-                    <a href="#" onclick="filterProducts('moda')">Moda Fitness</a><br>
                     <a href="#" onclick="filterProducts('moda')">Moda Hospitalar</a><br>
                     <a href="#" onclick="filterProducts('moda')">Moda Praia</a><br>
-                    <a href="#" onclick="filterProducts('moda')">Informática</a><br>
-                    <a href="#" onclick="filterProducts('treino')">Suplementos</a><br>
-                    <a href="#" onclick="filterProducts('celular')">Celular</a><br>
+                    <a href="#" onclick="filterProducts('moda')">Moda Fitness</a><br>
+                    <a href="#" onclick="filterProducts('treino')">Suplemento</a><br> 
                     <a href="#" onclick="filterProducts('calcados')">Calçados</a><br>
                     <a href="#" onclick="filterProducts('beleza')">Beleza</a><br>
-                    <a href="#" onclick="filterProducts('eletronicos')">Eletrônicos</a>
+                    <a href="#" onclick="filterProducts('celular')">Celular</a><br>
+                    <a href="#" onclick="filterProducts('moda')">Informática</a><br>                 
+                    <a href="#" onclick="filterProducts('eletronicos')">Eletrônicos</a><br>
+                    <a href="#" onclick="filterProducts('casa')">Casa & Decoração</a><br>
+                    <a href="#" onclick="filterProducts('ebooks')">Ebooks</a><br>
+                    
                 </div>
                 
                 <div class="footer-section">
@@ -2281,7 +2299,7 @@
                 'mercadolivre': 'Mercado Livre',
                 'eduzz': 'Eduzz',
                 'hotmart': 'Hotmart',
-                'kwai': 'Kwai',
+                'kiwify': 'Kiwify',
                 'aliexpress': 'AliExpress',
                 'outros': 'Outros'
             };
