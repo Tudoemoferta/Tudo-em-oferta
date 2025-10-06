@@ -374,8 +374,9 @@
         .platform-shopee { background: #ff6b35; }
         .platform-amazon { background: #ff9900; }
         .platform-mercadolivre { background: #3483fa; }
+        .platform-eduzz { background: #7b68ee; }
         .platform-hotmart { background: #ff6b35; }
-        .platform-kwai { background: #ff6b6b; }
+        .platform-kiwify { background: #ff6b6b; }
         .platform-aliexpress { background: #ff4747; }
         .platform-outro { background: #6c757d; }
         
@@ -520,7 +521,7 @@
                 <i class="fas fa-globe"></i>
                 Painel Universal
             </h1>
-            <p class="admin-subtitle">Gerencie produtos de qualquer plataforma - Shopee, Amazon, Mercado Livre, Hotmart e mais!</p>
+            <p class="admin-subtitle">Gerencie produtos de qualquer plataforma - Shopee, Amazon, Mercado Livre, Eduzz, Hotmart, Kiwify e mais!</p>
         </div>
         
         <!-- Seletor de Plataforma -->
@@ -546,9 +547,13 @@
                     <i class="fas fa-graduation-cap"></i>
                     Hotmart
                 </button>
-                <button class="platform-btn" data-platform="kwai">
-                    <i class="fas fa-video"></i>
-                    Kwai
+                <button class="platform-btn" data-platform="kiwify">
+                    <i class="fas fa-graduation-cap"></i>
+                    Kiwify
+                </button>
+                <button class="platform-btn" data-platform="eduzz">
+                    <i class="fas fa-graduation-cap"></i>
+                    Eduzz                    
                 </button>
                 <button class="platform-btn" data-platform="aliexpress">
                     <i class="fas fa-shipping-fast"></i>
@@ -661,8 +666,15 @@
                         <label class="form-label">Categoria:</label>
                         <select id="productCategory" class="form-select" required>
                             <option value="moda">Moda Feminina</option>
+                            <option value="moda">Moda Masculina</option>
+                            <option value="moda">Moda Infantil</option>
+                            <optiom value="moda">Moda Hospitalar</optiom>
+                            <option value="moda">Moda Fitnnes</option>
+                            <option value="treino">Suplemento</option>
                             <option value="calcados">Calçados</option>
                             <option value="beleza">Beleza</option>
+                            <option value="celular">Celular</option>
+                            <option value="eletronico">Eletrônicos</option>
                             <option value="eletronicos">Eletrônicos</option>
                             <option value="casa">Casa & Decoração</option>
                             <option value="ebooks">Ebooks & Cursos</option>
@@ -1046,8 +1058,9 @@
                 shopee: 'Shopee',
                 amazon: 'Amazon',
                 mercadolivre: 'ML',
+                eduzz: 'Eduzz',
                 hotmart: 'Hotmart',
-                kwai: 'Kwai',
+                kiwify: 'Kiwify',
                 aliexpress: 'AliExpress',
                 outro: 'Outro'
             };
