@@ -642,3 +642,114 @@ async function carregarProdutos() {
 
 // Chama a função quando a página carregar
 document.addEventListener('DOMContentLoaded', carregarProdutos);
+// Chave para armazenar os dados no navegador
+const LOCAL_STORAGE_KEY = 'affiliateProducts';
+
+// --- FUNÇÕES DE GERENCIAMENTO DE DADOS ---
+
+function loadProducts() {
+    const productsJSON = localStorage.getItem(LOCAL_STORAGE_KEY);
+    return productsJSON ? JSON.parse(productsJSON) : [];
+}
+
+function saveProducts(products) {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(products));
+}
+
+// --- FUNÇÃO DE RENDERIZAÇÃO ---
+// Cria o HTML e exibe os produtos na tela
+function renderProducts(products) {
+    const container = document.getElementById('productsGrid');
+
+    if (!container) {
+        console.error("Elemento com ID 'productsGrid' não encontrado no HTML. O salvamento funciona, mas a exibição não.");
+        return;
+    }
+
+    container.innerHTML = ''; 
+
+    if (products.length === 0) {
+        container.innerHTML = '<p class="info-message">Nenhum produto publicado ainda. Adicione um link para começar.</p>';
+        return;
+    }
+
+    products.forEach(produto => {
+        const card = document.createElement('div');
+        card.classList.add('product-card'); 
+
+        card.innerHTML = `
+            <h3 class="product-name">${produto.nome}</h3>
+            <p class="product-platform">Plataforma: ${produto.plataforma.toUpperCase()}</p>
+            <p class="product-description">${produto.descricao}</p>
+            
+            <a href="${produto.linkAfiliado}" target="_blank" class="btn-affiliate-link">
+                Comprar Agora
+            </a>
+
+            <button type="button" onclick="window.deleteProduct('${produto.id}')" class="btn-delete">Excluir</button>
+        `;
+        
+        container.appendChild(card);
+    });
+}
+
+
+// --- FUNÇÃO DE SUBMISSÃO DO FORMULÁRIO ---
+// Chamada quando o formulário é enviado para salvar um novo item
+function submitProductForm(event) {
+    event.preventDefault();
+
+    const form = event.target;
+    const newProduct = {
+        id: 'prod-' + Date.now(), 
+        // Assegure que os campos do seu formulário tenham estes nomes (name="productName", etc.)
+        nome: form.elements.productName.value.trim() || 'Produto Sem Nome',
+        descricao: form.elements.productDescription.value.trim() || 'Sem descrição.',
+        plataforma: form.elements.productPlatform.value.trim(),
+        linkAfiliado: form.elements.productAffiliateLink.value.trim(),
+    };
+
+    if (!newProduct.linkAfiliado) {
+        alert('O link de afiliado é obrigatório.');
+        return;
+    }
+
+    let products = loadProducts();
+    products.push(newProduct);
+    saveProducts(products);
+
+    renderProducts(products); 
+
+    form.reset();
+    alert('Produto publicado com sucesso! (Salvo no seu navegador)');
+}
+
+// --- FUNÇÃO DE EXCLUSÃO (Global para ser acessível pelo onclick) ---
+window.deleteProduct = function(productId) {
+    if (confirm("Tem certeza que deseja excluir este produto?")) {
+        let products = loadProducts();
+        const updatedProducts = products.filter(p => p.id !== productId);
+        
+        saveProducts(updatedProducts);
+        renderProducts(updatedProducts);
+    }
+}
+
+
+// --- INICIALIZAÇÃO ---
+
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Associa a função de salvar ao formulário
+    const form = document.getElementById('addProductForm');
+    if (form) {
+        form.addEventListener('submit', submitProductForm);
+    } else {
+        console.warn("Formulário com ID 'addProductForm' não encontrado.");
+    }
+    
+    // 2. Carrega e exibe os produtos ao abrir a página
+    renderProducts(loadProducts());
+
+    // Se você tiver outras funções de inicialização (como initializeApp), chame-as aqui
+    // initializeApp(); 
+});
