@@ -656,8 +656,6 @@ function saveProducts(products) {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(products));
 }
 
-// --- FUNÇÃO DE RENDERIZAÇÃO ---
-// Cria o HTML e exibe os produtos na tela
 function renderProducts(products) {
     const container = document.getElementById('productsGrid');
 
@@ -693,9 +691,6 @@ function renderProducts(products) {
     });
 }
 
-
-// --- FUNÇÃO DE SUBMISSÃO DO FORMULÁRIO ---
-// Chamada quando o formulário é enviado para salvar um novo item
 function submitProductForm(event) {
     event.preventDefault();
 
@@ -735,8 +730,6 @@ window.deleteProduct = function(productId) {
     }
 }
 
-
-// --- INICIALIZAÇÃO ---
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Associa a função de salvar ao formulário
