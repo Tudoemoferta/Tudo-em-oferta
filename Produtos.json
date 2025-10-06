@@ -1,0 +1,30 @@
+[
+  {
+    "id": "conjunto-alfaiataria",
+    "nome": "Conjunto de Alfaiataria Elegante",
+    "descricao": "Um conjunto perfeito para o ambiente de trabalho...",
+    "plataforma": "shoppe",
+    "linkAfiliado": "https://pay.hotmart.com/SEU-LINK-AQUI-1"
+  },
+  {
+    "id": "vestido-florido",
+    "nome": "Vestido Midi Floral",
+    "descricao": "Ideal para passeios e eventos casuais...",
+    "plataforma": "mercado livre",
+    "linkAfiliado": "https://kiwify.app.br/SEU-LINK-AQUI-2"
+  },
+{
+    "id": "ebook",
+    "nome": "Vida Ativa",
+    "descricao": "Ideal para passeios e eventos casuais...",
+    "plataforma": "kiwify",
+    "linkAfiliado": "https://kiwify.app.br/SEU-LINK-AQUI-2"
+  }
+
+  // Adicione mais produtos aqui
+
+
+
+
+
+]
