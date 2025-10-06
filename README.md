@@ -11,7 +11,7 @@ O **Águias Vitrine** é um site completo de marketing de afiliados desenvolvido
 ### 🎯 Para Visitantes
 - **Interface Responsiva**: Funciona perfeitamente em desktop, tablet e mobile
 - **Busca Inteligente**: Sistema de busca por nome e descrição dos produtos
-- **Filtros por Categoria**: Moda, Calçados, Beleza, Eletrônicos, Casa e Ebooks
+- **Filtros por Categoria**: Moda, Calçados, Beleza, Suplemento, Celular, Informática, Eletrônicos, Casa e Ebooks
 - **Exibição Profissional**: Cards de produtos com imagens, preços e descontos
 - **Links de Afiliados**: Redirecionamento direto para as plataformas de compra
 
