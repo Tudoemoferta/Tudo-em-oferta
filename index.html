@@ -1235,6 +1235,24 @@
             </div>
         </div>
     </header>
+<form id="addProductForm">
+    <h3>Publicar Novo Produto de Afiliado</h3>
+    
+    <input type="text" name="productName" placeholder="Nome do Produto" required>
+    
+    <textarea name="productDescription" placeholder="Descrição"></textarea>
+    
+    <select name="productPlatform" required>
+        <option value="">Selecione a Plataforma</option>
+        <option value="Hotmart">Hotmart</option>
+        <option value="Eduzz">Eduzz</option>
+        <option value="Kiwify">Kiwify</option>
+        </select>
+    
+    <input type="url" name="productAffiliateLink" placeholder="Link de Afiliado Completo" required>
+    
+    <button type="submit">Publicar Item</button>
+</form>
     
     <!-- Hero Section -->
     <section id="inicio" class="hero">
@@ -2489,6 +2507,16 @@
             // Força atualização das estatísticas após carregamento
             setTimeout(updateHeroStats, 100);
         });
+
+ <link rel="stylesheet" href="/css/style.css"> 
+
+<link rel="stylesheet" href="css/style.css"> 
+
+<script src="js/script.js"></script>   
+
+    <section id="productsGrid">
+    </section>
+        
     </script>
 </body>
 </html>
