@@ -218,6 +218,21 @@ function trackClick(productName, platform) {
             'mercadolivre': 'https://mercadolivre.com.br/affiliate-link-organizador',
             'amazon': 'https://amazon.com.br/affiliate-link-organizador'
         }
+const productPlatforms = affiliateLinks[productName];
+
+    if (productPlatforms && productPlatforms[platform]) {
+        const affiliateLink = productPlatforms[platform];
+        // Redireciona o usuário para o link de afiliado em uma nova aba
+        window.open(affiliateLink, '_blank');
+        
+        // OPCIONAL: Mantenha o console log para feedback
+        console.log(`Link de Afiliado: ${affiliateLink}`);
+    } else if (productPlatforms) {
+        alert(`O produto "${productName}" não está configurado para a plataforma "${platform}" ainda.`);
+    } else {
+        alert(`Produto "${productName}" não disponível nos links de afiliação. Configure os links.`);
+    }     
+    
     };
     
     const link = affiliateLinks[productName]?.[platform];
@@ -225,40 +240,6 @@ function trackClick(productName, platform) {
         window.open(link, '_blank');
     } else {
         alert('Link de afiliado não configurado ainda. Configure os links reais no arquivo script.js');
-    }
-}
-
-// Download Ebook
-function downloadEbook(ebookName) {
-    // Track download
-    if (typeof gtag !== 'undefined') {
-        gtag('event', 'download', {
-            event_category: 'ebook',
-            event_label: ebookName,
-            value: 1
-        });
-    }
-    
-    console.log(`Ebook download: ${ebookName}`);
-    
-    // Simulate download (replace with actual download links)
-    const ebookLinks = {
-        'guia-moda-feminina': 'assets/ebooks/guia-moda-feminina.pdf',
-        'manual-beleza-natural': 'assets/ebooks/manual-beleza-natural.pdf',
-        'organizacao-domestica': 'assets/ebooks/organizacao-domestica.pdf'
-    };
-    
-    const link = ebookLinks[ebookName];
-    if (link) {
-        // Create temporary download link
-        const a = document.createElement('a');
-        a.href = link;
-        a.download = `${ebookName}.pdf`;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-    } else {
-        alert('Ebook não disponível ainda. Configure os links de download no arquivo script.js');
     }
 }
 
