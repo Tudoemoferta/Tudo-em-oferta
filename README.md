@@ -121,9 +121,17 @@ O **Águias Vitrine** é um site completo de marketing de afiliados desenvolvido
 
 ### Categorias
 - 👗 Moda Feminina
+- 👕 Moda Masculina
+- 🧒🏻 Moda Infantil
+- 👩‍⚕️ Moda Hospitalar
+- 🩱 Moda Praia
+- 🏋️‍♀️ Moda Fitness
+- 🆙 Treino
 - 👠 Calçados
 - 💄 Beleza
-- 📱 Eletrônicos
+- 📱 Celular
+- 💻 Informática
+- 📺 Eletrônicos
 - 🏠 Casa & Decoração
 - 📚 Ebooks & Cursos
 
