@@ -104,7 +104,7 @@ O **Águias Vitrine** é um site completo de marketing de afiliados desenvolvido
 | Mercado Livre | MERCADO LIVRE | Amarelo (#fff159) |
 | Eduzz | EDUZZ | Roxo (#7b68ee) |
 | Hotmart | HOTMART | Laranja (#ff6b35) |
-| Kwai | KWAI | Vermelho (#ff6b6b) |
+| Kiwify | KIWIFY | Vermelho (#ff6b6b) |
 | AliExpress | ALIEXPRESS | Vermelho (#ff4747) |
 | Outros | OUTROS | Cinza (#6c757d) |
 
