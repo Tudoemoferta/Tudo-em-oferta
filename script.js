@@ -479,3 +479,43 @@ window.downloadEbook = downloadEbook;
 window.subscribeNewsletter = subscribeNewsletter;
 window.loadMoreProducts = loadMoreProducts;
 window.scrollToTop = scrollToTop;
+
+// Função para buscar e renderizar os produtos
+async function carregarProdutos() {
+    try {
+        // Faz a requisição para o arquivo JSON
+        const response = await fetch('./produtos.json');
+
+        // Verifica se a requisição foi bem-sucedida
+        if (!response.ok) {
+            throw new Error(`Erro ao carregar produtos: ${response.statusText}`);
+        }
+
+        const produtos = await response.json();
+        const containerProdutos = document.getElementById('container-produtos'); // Supondo um div com este ID
+
+        // Limpa o conteúdo existente
+        containerProdutos.innerHTML = ''; 
+
+        // Itera sobre os produtos e cria o HTML para cada um
+        produtos.forEach(produto => {
+            const card = document.createElement('div');
+            card.classList.add('card-produto');
+
+            card.innerHTML = `
+                <h3>${produto.nome}</h3>
+                <p>${produto.descricao}</p>
+                <a href="${produto.linkAfiliado}" target="_blank" class="btn-afiliado">Comprar na ${produto.plataforma.toUpperCase()}</a>
+            `;
+
+            containerProdutos.appendChild(card);
+        });
+
+    } catch (error) {
+        console.error("Falha ao carregar os dados dos produtos:", error);
+        document.getElementById('container-produtos').innerHTML = '<p>Erro ao carregar os produtos. Tente novamente mais tarde.</p>';
+    }
+}
+
+// Chama a função quando a página carregar
+document.addEventListener('DOMContentLoaded', carregarProdutos);
