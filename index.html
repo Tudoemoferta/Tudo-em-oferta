@@ -927,7 +927,7 @@
             
             <nav class="nav-menu">
                 <a href="#" class="nav-link active" data-filter="all">Todos</a>
-                <a href="#" class="nav-link" data-filter="Moda Feminina">Moda</a>
+                <a href="#" class="nav-link" data-filter="Moda (Vestuário)">Moda</a>
                 <a href="#" class="nav-link" data-filter="Calçados">Calçados</a>
                 <a href="#" class="nav-link" data-filter="Beleza">Beleza</a>
                 <a href="#" class="nav-link" data-filter="Eletrônicos">Eletrônicos</a>
@@ -973,9 +973,9 @@
             </h2>
             
             <div class="categories-grid">
-                <div class="category-card" data-category="Moda Feminina">
+                <div class="category-card" data-category="Moda (Vestuário)">
                     <div class="category-icon">👗</div>
-                    <div class="category-title">Moda Feminina</div>
+                    <div class="category-title">Moda (Vestuário)</div>
                 </div>
                 <div class="category-card" data-category="Calçados">
                     <div class="category-icon">👠</div>
@@ -1093,7 +1093,7 @@
                     <div class="form-group">
                         <label>Categoria:</label>
                         <select id="manualCategory">
-                            <option value="Moda Feminina">Moda Feminina</option>
+                            <option value="Moda (Vestuário)">Moda (Vestuário)</option>
                             <option value="Calçados">Calçados</option>
                             <option value="Beleza">Beleza</option>
                             <option value="Eletrônicos">Eletrônicos</option>
@@ -1161,7 +1161,7 @@
                 <div class="form-group">
                     <label>Categoria:</label>
                     <select id="editCategory">
-                        <option value="Moda Feminina">Moda Feminina</option>
+                        <option value="Moda (Vestuário)">Moda (Vestuário)</option>
                         <option value="Calçados">Calçados</option>
                         <option value="Beleza">Beleza</option>
                         <option value="Eletrônicos">Eletrônicos</option>
@@ -1594,7 +1594,7 @@
             // Preencher formulário de edição
             document.getElementById('editPlatform').value = product.platform || 'Shopee';
             document.getElementById('editProductName').value = product.name || '';
-            document.getElementById('editCategory').value = product.category || 'Moda Feminina';
+            document.getElementById('editCategory').value = product.category || 'Moda (Vestuário)';
             document.getElementById('editCurrentPrice').value = product.currentPrice || '';
             document.getElementById('editOriginalPrice').value = product.originalPrice || '';
             document.getElementById('editAffiliateLink').value = product.affiliateLink || '';
@@ -1909,7 +1909,7 @@
                     const product = {
                         platform: 'Shopee',
                         name: possibleNames[0] || `Produto ${index + 1}`,
-                        category: 'Moda Feminina',
+                        category: 'Moda (Vestuário)',
                         currentPrice: parseFloat(String(possiblePrices[0] || '0').replace(/[^\d.,]/g, '').replace(',', '.')) || 0,
                         originalPrice: 0,
                         affiliateLink: possibleLinks[0] || 'https://shopee.com.br',
