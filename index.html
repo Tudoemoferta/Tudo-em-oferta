@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Águias Vitrine - Tudo em Oferta</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 20px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .logo::before {
+            content: '🦅';
+            margin-right: 10px;
+        }
+
+        .admin-btn {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 12px 16px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .admin-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        /* Navigation */
+        .nav-menu {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-link {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 5px;
+            background: #f8f9fa;
+            color: #333;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: #ff6b6b;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Products Grid */
+        .products-section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: #f8f9fa;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff6b6b;
+            margin-bottom: 15px;
+        }
+
+        .product-btn {
+            width: 100%;
+            padding: 12px;
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .product-btn:hover {
+            background: #ff5252;
+            transform: translateY(-2px);
+        }
+
+        .discount-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #4CAF50;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* Admin Panel */
+        .admin-panel {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            display: none;
+        }
+
+        .admin-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            width: 90%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .close-admin {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #ff6b6b;
+        }
+
+        .btn-primary {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: #ff5252;
+            transform: translateY(-2px);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+        }
+
+        .empty-state h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 1.8rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .stats {
+                gap: 20px;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .admin-content {
+                width: 95%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="logo">Águias Vitrine</a>
+            <button class="admin-btn" onclick="openAdmin()">⚙️</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>🦅 Tudo em Oferta!</h1>
+        <p>Descubra as melhores ofertas e promoções com descontos imperdíveis</p>
+        
+        <div class="stats">
+            <div class="stat">
+                <span class="stat-number" id="totalProducts">0</span>
+                <span class="stat-label">Produtos</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number" id="avgDiscount">0%</span>
+                <span class="stat-label">Desconto</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">24h</span>
+                <span class="stat-label">Atualizado</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <nav class="nav-menu">
+        <a href="#" class="nav-link active" onclick="filterProducts('all')">Todos</a>
+        <a href="#" class="nav-link" onclick="filterProducts('Moda Feminina')">Moda</a>
+        <a href="#" class="nav-link" onclick="filterProducts('Calçados')">Calçados</a>
+        <a href="#" class="nav-link" onclick="filterProducts('Beleza')">Beleza</a>
+        <a href="#" class="nav-link" onclick="filterProducts('Eletrônicos')">Eletrônicos</a>
+        <a href="#" class="nav-link" onclick="filterProducts('Casa & Decoração')">Casa</a>
+        <a href="#" class="nav-link" onclick="filterProducts('Saúde & Bem-Estar')">Saúde</a>
+        <a href="#" class="nav-link" onclick="filterProducts('Utilitários')">Utilitários</a>
+        <a href="#" class="nav-link" onclick="filterProducts('Ebooks & Cursos')">Ebooks</a>
+    </nav>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="products-grid" id="productsGrid">
+            <div class="empty-state">
+                <h3>Nenhum produto cadastrado</h3>
+                <p>Clique no botão ⚙️ para adicionar seus primeiros produtos</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Panel -->
+    <div class="admin-panel" id="adminPanel">
+        <div class="admin-content">
+            <div class="admin-header">
+                <h2>⚙️ Gerenciar Produtos</h2>
+                <button class="close-admin" onclick="closeAdmin()">✕</button>
+            </div>
+
+            <form id="productForm">
+                <div class="form-group">
+                    <label>Nome do Produto:</label>
+                    <input type="text" id="productName" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Categoria:</label>
+                    <select id="productCategory" required>
+                        <option value="Moda Feminina">Moda Feminina</option>
+                        <option value="Calçados">Calçados</option>
+                        <option value="Beleza">Beleza</option>
+                        <option value="Eletrônicos">Eletrônicos</option>
+                        <option value="Casa & Decoração">Casa & Decoração</option>
+                        <option value="Saúde & Bem-Estar">Saúde & Bem-Estar</option>
+                        <option value="Utilitários">Utilitários</option>
+                        <option value="Ebooks & Cursos">Ebooks & Cursos</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Preço Atual (R$):</label>
+                    <input type="number" id="currentPrice" step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Preço Original (R$) - Opcional:</label>
+                    <input type="number" id="originalPrice" step="0.01">
+                </div>
+
+                <div class="form-group">
+                    <label>Link de Afiliado:</label>
+                    <input type="url" id="affiliateLink" required>
+                </div>
+
+                <div class="form-group">
+                    <label>URL da Imagem:</label>
+                    <input type="url" id="imageUrl" placeholder="https://exemplo.com/imagem.jpg">
+                </div>
+
+                <div class="form-group">
+                    <label>Descrição - Opcional:</label>
+                    <textarea id="description" rows="3"></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary">Adicionar Produto</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Configurações globais
+        const STORAGE_KEY = 'aguias_vitrine_products';
+        let currentFilter = 'all';
+
+        // Funções de persistência
+        function saveProducts(products) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(products));
+        }
+
+        function loadProducts() {
+            const stored = localStorage.getItem(STORAGE_KEY);
+            return stored ? JSON.parse(stored) : [];
+        }
+
+        // Função para abrir painel admin
+        function openAdmin() {
+            document.getElementById('adminPanel').style.display = 'block';
+        }
+
+        // Função para fechar painel admin
+        function closeAdmin() {
+            document.getElementById('adminPanel').style.display = 'none';
+            document.getElementById('productForm').reset();
+        }
+
+        // Função para adicionar produto
+        function addProduct(productData) {
+            const products = loadProducts();
+            products.push({
+                id: Date.now(),
+                ...productData,
+                createdAt: new Date().toISOString()
+            });
+            saveProducts(products);
+            renderProducts();
+            updateStats();
+        }
+
+        // Função para renderizar produtos
+        function renderProducts() {
+            const products = loadProducts();
+            const grid = document.getElementById('productsGrid');
+            
+            let filteredProducts = products;
+            if (currentFilter !== 'all') {
+                filteredProducts = products.filter(p => p.category === currentFilter);
+            }
+
+            if (filteredProducts.length === 0) {
+                grid.innerHTML = `
+                    <div class="empty-state">
+                        <h3>${currentFilter === 'all' ? 'Nenhum produto cadastrado' : 'Nenhum produto nesta categoria'}</h3>
+                        <p>Clique no botão ⚙️ para adicionar produtos</p>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = filteredProducts.map(product => {
+                const discount = product.originalPrice && product.originalPrice > product.currentPrice 
+                    ? Math.round(((product.originalPrice - product.currentPrice) / product.originalPrice) * 100)
+                    : 0;
+
+                return `
+                    <div class="product-card">
+                        ${discount > 0 ? `<div class="discount-badge">-${discount}%</div>` : ''}
+                        <img src="${product.imageUrl || 'https://via.placeholder.com/300x200?text=Produto'}" 
+                             alt="${product.name}" class="product-image" 
+                             onerror="this.src='https://via.placeholder.com/300x200?text=Produto'">
+                        <div class="product-info">
+                            <h3 class="product-name">${product.name}</h3>
+                            <div class="product-price">
+                                R$ ${product.currentPrice.toFixed(2)}
+                                ${product.originalPrice && product.originalPrice > product.currentPrice 
+                                    ? `<small style="text-decoration: line-through; color: #999; margin-left: 10px;">R$ ${product.originalPrice.toFixed(2)}</small>`
+                                    : ''
+                                }
+                            </div>
+                            ${product.description ? `<p style="color: #666; margin-bottom: 15px;">${product.description}</p>` : ''}
+                            <button class="product-btn" onclick="openLink('${product.affiliateLink}')">
+                                Comprar Agora
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Função para abrir link
+        function openLink(url) {
+            window.open(url, '_blank');
+        }
+
+        // Função para filtrar produtos
+        function filterProducts(category) {
+            currentFilter = category;
+            
+            // Atualizar navegação ativa
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            renderProducts();
+        }
+
+        // Função para atualizar estatísticas
+        function updateStats() {
+            const products = loadProducts();
+            const totalProducts = products.length;
+            
+            let totalDiscount = 0;
+            let discountCount = 0;
+            
+            products.forEach(product => {
+                if (product.originalPrice && product.originalPrice > product.currentPrice) {
+                    const discount = ((product.originalPrice - product.currentPrice) / product.originalPrice) * 100;
+                    totalDiscount += discount;
+                    discountCount++;
+                }
+            });
+            
+            const avgDiscount = discountCount > 0 ? Math.round(totalDiscount / discountCount) : 0;
+            
+            document.getElementById('totalProducts').textContent = totalProducts;
+            document.getElementById('avgDiscount').textContent = avgDiscount + '%';
+        }
+
+        // Event listener para formulário
+        document.getElementById('productForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const productData = {
+                name: document.getElementById('productName').value,
+                category: document.getElementById('productCategory').value,
+                currentPrice: parseFloat(document.getElementById('currentPrice').value),
+                originalPrice: parseFloat(document.getElementById('originalPrice').value) || 0,
+                affiliateLink: document.getElementById('affiliateLink').value,
+                imageUrl: document.getElementById('imageUrl').value,
+                description: document.getElementById('description').value
+            };
+            
+            addProduct(productData);
+            closeAdmin();
+            alert('✅ Produto adicionado com sucesso!');
+        });
+
+        // Fechar painel ao clicar fora
+        document.getElementById('adminPanel').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeAdmin();
+            }
+        });
+
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', function() {
+            renderProducts();
+            updateStats();
+        });
+    </script>
+</body>
+</html>
