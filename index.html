@@ -844,6 +844,7 @@
             <a class="nav-link" data-category="calcados">Calçados</a>
             <a class="nav-link" data-category="beleza">Beleza</a>
             <a class="nav-link" data-category="eletronicos">Eletrônicos</a>
+            <a class="nav-link" data-categoru="celular">Celular</a>
             <a class="nav-link" data-category="casa">Casa</a>
             <a class="nav-link" data-category="saude">Saúde</a>
             <a class="nav-link" data-category="utilitarios">Utilitários</a>
@@ -866,6 +867,10 @@
                     <div class="category-name">Beleza</div>
                 </div>
                 <div class="category-card" data-category="eletronicos">
+                    <div class="category-icon">💻</div>
+                    <div class="category-name">Eletrônicos</div>
+                </div>
+                <div class="category-card" data-category="celular">
                     <div class="category-icon">📱</div>
                     <div class="category-name">Eletrônicos</div>
                 </div>
@@ -962,10 +967,10 @@
                                             <option value="calcados">Calçados</option>
                                             <option value="beleza">Beleza</option>
                                             <option value="eletronicos">Eletrônicos</option>
+                                            <option value="celular">Celular</option>
                                             <option value="casa">Casa</option>
                                             <option value="saude">Saúde</option>
                                             <option value="utilitarios">Utilitários</option>
-                                            <option value="celular">Celular</option>
                                             <option value="ebooks">Ebooks & Cursos</option>
                                         </select>
                                     </div>
@@ -976,13 +981,13 @@
                                 <div class="form-col">
                                     <div class="form-group">
                                         <label class="form-label" for="productCurrentPrice">Preço Atual (R$)*</label>
-                                        <input type="number" id="productCurrentPrice" class="form-control" placeholder="Ex: 899.90" step="0.01" min="0" required>
+                                        <input type="number" id="productCurrentPrice" class="form-control" placeholder="Ex: 899,90" step="0.01" min="0" required>
                                     </div>
                                 </div>
                                 <div class="form-col">
                                     <div class="form-group">
                                         <label class="form-label" for="productOriginalPrice">Preço Original (R$)</label>
-                                        <input type="number" id="productOriginalPrice" class="form-control" placeholder="Ex: 1299.90" step="0.01" min="0">
+                                        <input type="number" id="productOriginalPrice" class="form-control" placeholder="Ex: 1.299,90" step="0.01" min="0">
                                     </div>
                                 </div>
                             </div>
@@ -1666,10 +1671,10 @@
                 'calcados': ['calcado', 'calçado', 'sapato', 'tenis', 'tênis', 'shoes'],
                 'beleza': ['beleza', 'beauty', 'maquiagem', 'makeup', 'cosmético', 'cosmetico'],
                 'eletronicos': ['eletronico', 'eletrônico', 'electronics', 'gadget', 'tech', 'tecnologia'],
+                'celular': ['smartphone', 'carregador', 'fone de ouvido', 'capa para celular'],
                 'casa': ['casa', 'home', 'decoração', 'decoracao', 'móveis', 'moveis', 'furniture'],
                 'saude': ['saude', 'saúde', 'health', 'bem-estar', 'bem estar', 'fitness', 'remédio', 'remedio'],
                 'utilitarios': ['utilitario', 'utilitário', 'utility', 'ferramenta', 'tool', 'geral'],
-                'celular': ['smartphone', 'carregador', 'fone de ouvido', 'capa para celular'],
                 'ebooks': ['ebook', 'livro', 'book', 'curso', 'course', 'digital']
             };
             
