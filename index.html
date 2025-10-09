@@ -4,6 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, format-detection=telephone=no">
     <title>Águias Vitrine - Tudo em Oferta!</title>
+</head>
+    <body>
+        <!-- Aqui os produtos vão aparecer -->
+        <div id="productGrid"></div>
+     <script>
+    const LOCAL_STORAGE_KEY = 'affiliateProducts';
+
+    function loadProducts() {
+        const productsJSON = localStorage.getItem(LOCAL_STORAGE_KEY);
+        return productsJSON ? JSON.parse(productsJSON) : [];
+    }
+
+    function renderProducts(products) {
+        const container = document.getElementById('productsGrid');
+        if (!container) {
+            console.error("Elemento com ID 'productsGrid' não encontrado.");
+            return;
+        }
+        container.innerHTML = '';
+        if (products.length === 0) {
+            container.innerHTML = '<p>Nenhum produto publicado ainda.</p>';
+            return;
+        }
+        products.forEach(produto => {
+            const card = document.createElement('div');
+            card.innerHTML = `
+                <h3>${produto.nome}</h3>
+                <p>${produto.descricao}</p>
+            `;
+            container.appendChild(card);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        renderProducts(loadProducts());
+    });
+  </script>
+</body>
+</html>    
+    
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦅</text></svg>">
     <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
