@@ -145,6 +145,9 @@ Certifique-se de incluir o arquivo `auth.js` no seu HTML, logo após a inicializ
   <button onclick="resetPassword()" style="padding:10px 20px;">Esqueci a senha</button>
   <div id="loginError" style="color:red; margin-top:10px;"></div>
 </div>
+<div id="adminContent" style="display:none;">
+  <!-- todo o conteúdo do painel -->
+</div>
 
 ## 9. Atualizar os Event Listeners
 
