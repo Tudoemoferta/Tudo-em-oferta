@@ -137,6 +137,14 @@ Certifique-se de incluir o arquivo `auth.js` no seu HTML, logo após a inicializ
 <!-- Arquivo de autenticação -->
 <script src="auth.js"></script>
 ```
+<div id="loginSection" style="text-align:center; margin-bottom:30px;">
+  <h2>🔐 Acesso Administrativo</h2>
+  <input type="email" id="adminEmail" placeholder="Email" style="padding:10px; margin:5px;">
+  <input type="password" id="adminPassword" placeholder="Senha" style="padding:10px; margin:5px;">
+  <button onclick="loginWithEmailPassword()" style="padding:10px 20px;">Entrar</button>
+  <button onclick="resetPassword()" style="padding:10px 20px;">Esqueci a senha</button>
+  <div id="loginError" style="color:red; margin-top:10px;"></div>
+</div>
 
 ## 9. Atualizar os Event Listeners
 
