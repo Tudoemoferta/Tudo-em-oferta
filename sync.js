@@ -427,3 +427,67 @@ function showConflictsDialog(conflicts) {
 
 // Adicionar variável global para controlar se a carga inicial foi concluída
 let initialLoadComplete = false;
+
+// Sincronização em tempo real de produtos no Firebase Realtime Database
+
+let products = [];
+
+// Inicializa a sincronização
+function initSync() {
+  console.log("Sincronização iniciada...");
+  database.ref("products").on("value", (snapshot) => {
+    if (snapshot.exists()) {
+      products = Object.values(snapshot.val());
+      renderProducts();
+      updateStats();
+    } else {
+      products = [];
+      renderProducts();
+    }
+  });
+}
+
+// Adicionar produto com sincronização
+function addProductWithSync(product) {
+  product.createdAt = new Date().toISOString();
+  const newRef = database.ref("products").push();
+  product.id = newRef.key;
+  newRef.set(product);
+}
+
+// Atualizar produto existente
+function updateProductWithSync(id, updatedProduct) {
+  database.ref("products/" + id).update(updatedProduct);
+}
+
+// Excluir produto
+function deleteProductWithSync(id) {
+  database.ref("products/" + id).remove();
+}
+
+// Limpar todos os produtos
+function clearAllProductsWithSync() {
+  database.ref("products").remove();
+  products = [];
+  renderProducts();
+}
+
+// Sincronização manual (opcional)
+function forceSyncWithFirebase() {
+  initSync();
+  alert("🔄 Sincronização forçada com sucesso!");
+}
+
+// Status de conexão
+function checkConnectionStatus() {
+  const statusEl = document.getElementById("connectionStatus");
+  if (!statusEl) return;
+  const connectedRef = database.ref(".info/connected");
+  connectedRef.on("value", (snap) => {
+    if (snap.val() === true) {
+      statusEl.textContent = "🟢 Online";
+    } else {
+      statusEl.textContent = "🔴 Offline";
+    }
+  });
+}
